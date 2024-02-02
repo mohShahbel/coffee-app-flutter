@@ -12,4 +12,7 @@ class Assets {
   static const String imagesActiveHomeIcon = "assets/icons/active_home_icon.svg";
   static const String imagesActiveCartIcon = "assets/icons/active_cart_icon.svg";
   static const String imagesActiveFavoriteIcon = "assets/icons/active_favorite_icon.svg";
+  static const String imagesNotificationIcon = "assets/icons/notification_icon.svg";
+  static const String imagesSearchIcon = "assets/icons/search_icon.svg";
+  static const String imagesSearchFilteringIcon = "assets/icons/search_filtering_icon.svg";
 }

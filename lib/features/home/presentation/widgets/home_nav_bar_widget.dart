@@ -24,7 +24,7 @@ class HomeNavBar extends StatelessWidget {
       controller: _controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
-      navBarStyle: NavBarStyle.style3,
+      navBarStyle: NavBarStyle.style11,
       backgroundColor: Colors.grey[100]!,
     );
   }

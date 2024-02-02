@@ -1,5 +1,7 @@
-import 'package:coffee_app_flutter/core/utils/app_assets.dart';
+import 'package:coffee_app_flutter/features/home/presentation/widgets/sections/cus_home_header_section.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/sections/cus_search_bar_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -7,35 +9,18 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: CustomScrollView(
-        clipBehavior: Clip.none,
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(child: CustomHomeAppBar()),
-        ],
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 36),
+        child: CustomScrollView(
+          clipBehavior: Clip.none,
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(child: CustomHomeHeaderSection()),
+            SliverToBoxAdapter(child: CustomSearchBarSection())
+          ],
+        ),
       ),
     );
   }
 }
 
-class CustomHomeAppBar extends StatelessWidget {
-  const CustomHomeAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 16),
-        Row(
-          children: [
-            SizedBox(
-              height: 60,
-              width: 60,
-              child: Image.asset(Assets.imagesProfile),
-            ),
-          ],
-        )
-      ],
-    );
-  }
-}
