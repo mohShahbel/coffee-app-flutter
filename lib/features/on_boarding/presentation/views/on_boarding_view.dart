@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/core/functions/navigation.dart';
 import 'package:coffee_app_flutter/core/utils/app_colors.dart';
 import 'package:coffee_app_flutter/core/utils/app_strings.dart';
 import 'package:coffee_app_flutter/core/widgets/cus_button.dart';
@@ -14,14 +15,28 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
   final PageController _controller = PageController(initialPage: 0);
   int currentIndex = 0;
+
+  void _onTap() {
+    if (currentIndex == 2) {
+      customReplacementNavigation(context, "/homeView");
+      return;
+    }
+    _controller.nextPage(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.linear,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutBuilder(
-        builder: (context, constraints) {
+        builder: (context, size) {
           return Container(
-            height: constraints.maxHeight,
-            width: constraints.maxWidth,
+            padding: EdgeInsets.symmetric(
+              horizontal: size.maxWidth / 8.5, // equal 45 px
+              vertical: size.maxHeight / 11.2, // equal 70 px
+            ),
             decoration: BoxDecoration(
               color: AppColors.black,
               image: const DecorationImage(
@@ -30,23 +45,15 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 image: AssetImage("assets/images/Onboarding.png"),
               ),
             ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: constraints.maxWidth / 8.5,
-                  vertical: constraints.maxHeight / 11.2),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  OnBoardingWidgetBody(
+            child: Column(
+              children: [
+                OnBoardingWidgetBody(
                     controller: _controller,
-                    onPageChanged: (index) => setState(
-                      () => currentIndex = index,
-                    ),
-                  ),
-                  const SizedBox(height: 36),
-                  const CustomBtn(text: AppStrings.getStarted),
-                ],
-              ),
+                    onPageChanged: (index) =>
+                        setState(() => currentIndex = index)),
+                const SizedBox(height: 36),
+                CustomBtn(text: AppStrings.getStarted, onPressed: _onTap),
+              ],
             ),
           );
         },
