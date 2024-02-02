@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (lib/features/cart/presentation/views/favorite_view.dart)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/features/cart/presentation/views/favorite_view.dart"
+        }
+    ]
+}

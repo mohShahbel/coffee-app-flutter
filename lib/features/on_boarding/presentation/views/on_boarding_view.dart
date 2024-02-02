@@ -18,7 +18,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   void _onTap() {
     if (currentIndex == 2) {
-      customReplacementNavigation(context, "/homeView");
+      customReplacementNavigation(context, "/homeNavAr");
       return;
     }
     _controller.nextPage(
