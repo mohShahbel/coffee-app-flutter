@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/features/home/presentation/widgets/sections/cus_coffee_menu_section.dart';
 import 'package:coffee_app_flutter/features/home/presentation/widgets/sections/cus_home_header_section.dart';
 import 'package:flutter/material.dart';
 
@@ -16,11 +17,11 @@ class HomeView extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(child: CustomHomeHeaderSection()),
-            SliverToBoxAdapter(child: CustomSearchBarSection())
+            SliverToBoxAdapter(child: CustomSearchBarSection()),
+            SliverToBoxAdapter(child: CoffeeMenuSection()),
           ],
         ),
       ),
     );
   }
 }
-

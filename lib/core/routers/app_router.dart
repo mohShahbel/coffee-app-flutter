@@ -15,14 +15,14 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const OnBoardingView(),
     ),
     GoRoute(
-      path: "/homeNavar",
+      path: "/homeNavBar",
       pageBuilder: (context, state) {
         return CustomTransitionPage(
-          transitionDuration: const Duration(milliseconds: 600),
+          transitionDuration: const Duration(milliseconds: 300),
           child: const HomeNavBar(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
-              opacity: CurveTween(curve: Curves.linear).animate(animation),
+              opacity: CurveTween(curve: Curves.ease).animate(animation),
               child: child,
             );
           },

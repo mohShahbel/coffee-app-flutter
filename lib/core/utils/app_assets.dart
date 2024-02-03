@@ -15,4 +15,7 @@ class Assets {
   static const String imagesNotificationIcon = "assets/icons/notification_icon.svg";
   static const String imagesSearchIcon = "assets/icons/search_icon.svg";
   static const String imagesSearchFilteringIcon = "assets/icons/search_filtering_icon.svg";
+  static const String imagesCappuccinoIcon = "assets/icons/cappuccino_icon.svg";
+  static const String imagesEspressoIcon = "assets/icons/espresso_icon.svg";
+  static const String imagesColdBrewIcon = "assets/icons/cold_brew_icon.svg";
 }

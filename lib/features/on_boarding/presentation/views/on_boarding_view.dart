@@ -4,6 +4,7 @@ import 'package:coffee_app_flutter/core/utils/app_strings.dart';
 import 'package:coffee_app_flutter/core/widgets/cus_button.dart';
 import 'package:coffee_app_flutter/features/on_boarding/presentation/widgets/on_boarding_widget_body.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -13,18 +14,25 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  final PageController _controller = PageController(initialPage: 0);
+  final PageController _controller = PageController();
   int currentIndex = 0;
 
-  void _onTap() {
-    if (currentIndex == 2) {
-      customReplacementNavigation(context, "/homeNavAr");
-      return;
-    }
-    _controller.nextPage(
+  void _onTap() async {
+    // if (currentIndex == 2) {
+    //   GoRouter.of(context).push("/homeNavBar");
+    //   //  customReplacementNavigation(context, "/homeNavBar");
+    //   return;
+    // }
+    await _controller.nextPage(
       duration: const Duration(milliseconds: 300),
       curve: Curves.linear,
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override

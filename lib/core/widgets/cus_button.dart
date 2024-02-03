@@ -17,7 +17,7 @@ class CustomBtn extends StatelessWidget {
   final Color? color;
   final String text;
   final TextStyle? textStyle;
-  final VoidCallback? onPressed;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {

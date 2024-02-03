@@ -12,7 +12,7 @@ abstract class AppStrings {
       searchCoffee = "Search Coffee..",
       cappuccino = "Cappuccino",
       coldBrew = "Cold Brew",
-      expresso = "Expresso",
+      espresso = "Espresso",
       limited = "Limited",
       bintara = "Bintara",
       bekasi = "Bekasi",
